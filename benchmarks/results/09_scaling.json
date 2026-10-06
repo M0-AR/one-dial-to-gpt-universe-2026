@@ -1,0 +1,34 @@
+{
+  "claim": "test loss follows smooth scaling trend; loss!=intelligence",
+  "sweep": [
+    {
+      "n_embd": 32,
+      "n_layer": 2,
+      "N": 30272,
+      "val_loss": 2.6672,
+      "flops": 23248896000
+    },
+    {
+      "n_embd": 64,
+      "n_layer": 2,
+      "N": 109696,
+      "val_loss": 2.4653,
+      "flops": 84246528000
+    },
+    {
+      "n_embd": 64,
+      "n_layer": 4,
+      "N": 209664,
+      "val_loss": 2.4399,
+      "flops": 161021952000
+    }
+  ],
+  "power_law_exponent": -0.0482,
+  "anchors": {
+    "alexnet_params": 60000000,
+    "gpt2_largest": 1500000000,
+    "gpt3": 175000000000,
+    "note": "same loop predict->measure->nudge; newer sizes secret so counter stops at GPT-3"
+  },
+  "hidden_pattern": "log(val_loss) slope -0.048 <0: bigger tiny-model still wins at fixed tokens; Chinchilla would demand tokens scale with N (~20 tok/param) \u2014 our sweep is compute-mismatched on purpose to show smooth trend even off-optimal."
+}

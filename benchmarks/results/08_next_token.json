@@ -1,0 +1,11 @@
+{
+  "claim": "next-token prediction engine; probs sum to one; append+rerun generates",
+  "vocab": 65,
+  "n_params": 210432,
+  "block": 32,
+  "train_loss_early": 3.55,
+  "val_loss": 2.3446,
+  "val_ppl": 10.43,
+  "sample": "\nKING:\nB iin'the pim:\nqu bin ho\nWhit mame stat tateim'st homy:\nHe sound siAt w. do!\nCezaldexbe kigond ind himat widy guseNre t",
+  "hidden_pattern": "loss drops fastest in first 15% of steps (structure), then slow grind (memorization); sampling temp=1.0 alternates dialogue-like bursts \u2014 continuation, not conversation."
+}

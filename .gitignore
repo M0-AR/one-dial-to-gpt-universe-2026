@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+data/*.bin
+data/*.pt
+benchmarks/results/*.png
+*.log

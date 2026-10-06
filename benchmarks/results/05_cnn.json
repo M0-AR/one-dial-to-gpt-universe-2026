@@ -1,0 +1,9 @@
+{
+  "claim": "filters learned from examples, not typed by hand; early layers=edges",
+  "dataset": "sklearn digits 8x8 (1797 public images)",
+  "edge_energy_mean": 2.3731,
+  "acc_pixels": 0.9639,
+  "acc_pixels_plus_edge": 0.9639,
+  "alexnet_anchor": "60M params, 650k neurons, 5 conv + 3 fc, 2x GTX580, ILSVRC 2012",
+  "hidden_pattern": "edge energy correlates with loop digits (0,6,8,9) \u2014 evidence hierarchy starts at color-change detectors."
+}

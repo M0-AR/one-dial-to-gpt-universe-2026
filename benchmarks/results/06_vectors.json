@@ -1,0 +1,24 @@
+{
+  "claim": "coordinates learned from text alone; analogy is closeness not equality",
+  "corpus_chars": 1115394,
+  "analogy": "king-man+woman",
+  "cos_to_queen": 0.7271,
+  "rank_of_queen": 1,
+  "ranking": [
+    "queen",
+    "she",
+    "woman",
+    "is",
+    "king",
+    "rules"
+  ],
+  "sims": {
+    "queen": 0.727,
+    "she": 0.608,
+    "woman": 0.527,
+    "is": 0.329,
+    "king": 0.295,
+    "rules": 0.272
+  },
+  "hidden_pattern": "gender direction (woman-man) aligns with (queen-king) cosine>0.5 even at 8 dims \u2014 relational structure emerges before semantics saturate; debias caveat (Bolukbasi et al. 2016): analogies also encode stereotypes."
+}

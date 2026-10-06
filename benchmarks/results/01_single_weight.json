@@ -1,0 +1,14 @@
+{
+  "claim": "single dial + 4-param neuron learns from examples, no hand rules",
+  "n_params": 4,
+  "w": [
+    -0.6353,
+    -1.5029,
+    5.7103
+  ],
+  "b": -1.3978,
+  "loss_start": 0.6692,
+  "loss_end": 0.0509,
+  "acc": 1.0,
+  "interpretation": "pointed_ears weight stays small (fox shares it); whiskers+tail disambiguate. Rules->examples trade verified."
+}

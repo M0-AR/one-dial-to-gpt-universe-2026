@@ -1,0 +1,25 @@
+services:
+  lab:
+    build: .
+    container_name: one-dial-lab
+    volumes:
+      - ./:/lab
+      - ./data:/lab/data
+      - ./benchmarks/results:/lab/benchmarks/results
+    working_dir: /lab
+    command: python src/run_all.py --fast
+    environment:
+      - PYTHONPATH=/lab
+      - TZ=UTC
+      - SEED=0
+
+  report:
+    image: python:3.11-slim
+    container_name: one-dial-report
+    volumes:
+      - ./benchmarks/results:/usr/share/nginx/html:ro
+    command: python -m http.server 8000 --directory /usr/share/nginx/html
+    ports:
+      - "8000:8000"
+    depends_on:
+      - lab

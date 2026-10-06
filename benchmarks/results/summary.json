@@ -1,0 +1,121 @@
+{
+  "fast": true,
+  "experiments": {
+    "01_single_weight": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "n_params",
+        "w",
+        "b",
+        "loss_start",
+        "loss_end",
+        "acc",
+        "interpretation"
+      ]
+    },
+    "02_valley": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "sweep",
+        "hidden_pattern"
+      ]
+    },
+    "03_spirals26": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "n_params",
+        "arch",
+        "dataset",
+        "acc_linear",
+        "acc_mlp26",
+        "loss_mlp26",
+        "hard_spirals"
+      ]
+    },
+    "04_backprop": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "max_rel_err",
+        "checks",
+        "hidden_pattern"
+      ]
+    },
+    "05_cnn": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "dataset",
+        "edge_energy_mean",
+        "acc_pixels",
+        "acc_pixels_plus_edge",
+        "alexnet_anchor",
+        "hidden_pattern"
+      ]
+    },
+    "06_vectors": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "corpus_chars",
+        "analogy",
+        "cos_to_queen",
+        "rank_of_queen",
+        "ranking",
+        "sims",
+        "hidden_pattern"
+      ]
+    },
+    "07_attention": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "sentence",
+        "attn_it",
+        "it_to_animal",
+        "it_to_itself",
+        "hidden_pattern"
+      ]
+    },
+    "08_next_token": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "vocab",
+        "n_params",
+        "block",
+        "train_loss_early",
+        "val_loss",
+        "val_ppl",
+        "sample"
+      ]
+    },
+    "09_scaling": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "sweep",
+        "power_law_exponent",
+        "anchors",
+        "hidden_pattern"
+      ]
+    },
+    "10_live_market": {
+      "ok": true,
+      "keys": [
+        "claim",
+        "snapshot",
+        "live",
+        "n_returns",
+        "mse_persist",
+        "mse_tiny_mlp",
+        "directional_acc",
+        "hidden_pattern"
+      ]
+    }
+  },
+  "status": "ok"
+}

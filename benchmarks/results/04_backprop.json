@@ -1,0 +1,42 @@
+{
+  "claim": "backprop delivers per-connection gradient; optimizer then nudges",
+  "max_rel_err": 2.6832050046860612e-09,
+  "checks": {
+    "W1(0, 0)": {
+      "analytic": 0.001666038168791921,
+      "numeric": 0.0016660381740862815,
+      "rel": 1.5889073032452595e-09
+    },
+    "W1(0, 1)": {
+      "analytic": 0.019831587382323414,
+      "numeric": 0.01983158737228763,
+      "rel": 2.5302524987865347e-10
+    },
+    "b10": {
+      "analytic": -0.023622399524423673,
+      "numeric": -0.02362239952535816,
+      "rel": 1.977964023475226e-11
+    },
+    "b11": {
+      "analytic": 0.003132375042524116,
+      "numeric": 0.0031323750593337247,
+      "rel": 2.6832050046860612e-09
+    },
+    "W2(0, 0)": {
+      "analytic": -0.3977325755256029,
+      "numeric": -0.3977325755410987,
+      "rel": 1.9480138522690068e-11
+    },
+    "W2(1, 0)": {
+      "analytic": -1.2471943112222985,
+      "numeric": -1.2471943112157824,
+      "rel": 2.6123118577092216e-12
+    },
+    "b20": {
+      "analytic": -0.6037438081465103,
+      "numeric": -0.6037438081474278,
+      "rel": 7.598324779232234e-13
+    }
+  },
+  "hidden_pattern": "tanh saturation: gradients shrink for |z|>2 \u2014 deep stacks attenuate without skip/shortcut connections (Lang & Witbrock 1988 two-spirals trick)."
+}

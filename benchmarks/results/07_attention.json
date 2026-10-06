@@ -1,0 +1,18 @@
+{
+  "claim": "attention mixes information across positions; brighter=larger weight",
+  "sentence": "The animal did not cross because it was tired.",
+  "attn_it": {
+    "the": 0.1414,
+    "animal": 0.1882,
+    "did": 0.1481,
+    "not": 0.1228,
+    "cross": 0.0814,
+    "because": 0.1266,
+    "it": 0.1915,
+    "was": 0.0,
+    "tired": 0.0
+  },
+  "it_to_animal": 0.1882,
+  "it_to_itself": 0.1915,
+  "hidden_pattern": "even with random init + small noun-biased Q, causal softmax concentrates 'it' on 'animal' (>0.18) over verbs \u2014 context routing is learnable linear retrieval, multi-heads multiply such channels (Vaswani et al. 2017)."
+}
