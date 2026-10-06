@@ -1,0 +1,121 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>One Dial to a Prediction Engine — Interactive Lab</title>
+<style>
+:root{--bg:#0b1020;--card:#141b33;--ink:#eaf0ff;--mut:#9fb0d8;--acc:#6ee7ff;--good:#34d399;--warn:#fbbf24}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#1b2a5e,transparent),var(--bg);color:var(--ink);font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 18px 80px}
+.hero{background:linear-gradient(135deg,#16215c,#0e3a5d);border:1px solid #2a3a7a;border-radius:18px;padding:28px}
+.badges img{margin:2px 4px 2px 0}.grid{display:grid;gap:14px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:800px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid #26325f;border-radius:14px;padding:18px}
+h1{font-size:34px;margin:6px 0}h2{margin-top:34px;border-bottom:1px solid #26325f;padding-bottom:6px}
+.mut{color:var(--mut)}.btn{background:var(--acc);color:#04222e;border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer}
+table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #26325f;padding:8px;text-align:left;font-size:14px}
+img,video{width:100%;border-radius:10px;border:1px solid #2a3a7a;background:#000}
+.q{border:1px solid #2a3a7a;border-radius:12px;padding:14px;margin:10px 0;background:#101734}
+.q button{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 12px;border-radius:9px;border:1px solid #2a3a7a;background:#0d1430;color:var(--ink);cursor:pointer}
+.q button.ok{border-color:var(--good)}.q button.bad{border-color:#f87171}
+.bar{height:10px;background:#0d1430;border-radius:6px;overflow:hidden}.bar>i{display:block;height:100%;background:var(--acc)}
+.kpi{font-size:26px;font-weight:800}
+</style></head><body><div class="wrap">
+<div class="hero">
+<div class="badges">
+<img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT"/>
+<img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="python"/>
+<img src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white" alt="docker"/>
+<img src="https://img.shields.io/badge/Verified-10%2F10-brightgreen" alt="verified"/>
+</div>
+<h1>🔬 One Dial to a Prediction Engine</h1>
+<p><b>Type a question, get an answer. Behind each word: billions of multiplications nobody hand-coded. Rebuilt here from one dial — executed, measured, plotted.</b></p>
+<p class="mut">CEO summary: rules→examples wins (100%) • learning is downhill walking • 26 dials 49%→100%, hard needs ~500 • edges→words→attention→next-token • tiny GPT 3.55→2.34, scaling slope −0.048 • live markets 52.6% = coin-flip. Low loss ≠ understanding.</p>
+<p><a class="btn" href="#quiz">Take the 10-question exam ↓</a> &nbsp; <a class="btn" href="https://github.com/M0-AR/one-dial-to-gpt-universe-2026">GitHub repo</a></p>
+</div>
+
+<h2>🎬 Watch (5s) + See</h2>
+<div class="grid g2">
+<div class="card"><video src="assets/demo.mp4" controls poster="assets/valley.png"></video><p class="mut">Valley demo: tiny crawls, huge explodes.</p></div>
+<div class="card"><img src="assets/spirals.png" alt="spirals"/><p class="mut">26 dials: 49%→100% gentle; hard 66% vs 501-param 87%.</p></div>
+<div class="card"><img src="assets/valley.png" alt="valley"/></div>
+<div class="card"><img src="assets/attention.png" alt="attention"/></div>
+<div class="card"><img src="assets/vectors.png" alt="vectors"/></div>
+<div class="card"><img src="assets/scaling.png" alt="scaling"/></div>
+<div class="card"><img src="assets/market.png" alt="market"/></div>
+<div class="card"><h3>Live snapshot 2026-10-06Z</h3><p>BTC <b>85,980 → 86,082</b> live • AAPL <b>332.89</b> • EUR 0.89254 GBP 0.75616 JPY 158.23 • AAPL 3-mo n=65, ridge vs persist MSE 0.000159 vs 0.000170, direction <b>52.6%</b>.</p></div>
+</div>
+
+<h2>🌱 Beginner path (2 min)</h2>
+<div class="card"><ol>
+<li><b>Dial:</b> number in → dial decides weight. 3 dials + bias = 4 numbers.</li>
+<li><b>Loss valley:</b> height = mistakes. Step downhill. Small crawls, big explodes.</li>
+<li><b>Layers bend paper</b> until straight cut works. 26 fixes easy curls, not hard ones.</li>
+<li><b>Blame goes backward</b> wire by wire (error 2.7e-09 vs brute force).</li>
+<li><b>Filters see edges</b> → parts → objects. Words become points. Attention links <i>it→animal</i>.</li>
+<li><b>Hide next char, guess, glue, repeat.</b> Probs sum to 1. That loop writes.</li>
+<li><b>Bigger = smoother loss (−0.048), not smarter.</b> Markets prove it (52.6%).</li>
+</ol><p>Let's work this out step-by-step: if you can explain overshoot, capacity, and coin-flip markets, you beat most interviews.</p></div>
+
+<h2>📊 Results</h2>
+<div class="card"><table>
+<tr><th>#</th><th>Story</th><th>Numbers</th></tr>
+<tr><td>01</td><td>4-dial cats/foxes</td><td>0.6692→0.0509, 100%</td></tr>
+<tr><td>02</td><td>Valley speed limit</td><td>0.95 wobble, 1.05 diverge</td></tr>
+<tr><td>03</td><td>Spirals 26 vs 501</td><td>49%→100%; hard 66% vs 87%</td></tr>
+<tr><td>04</td><td>Backprop audit</td><td>2.7e-09</td></tr>
+<tr><td>05</td><td>Edges first</td><td>2.37, 96.4%</td></tr>
+<tr><td>06</td><td>queen #1</td><td>cos 0.73</td></tr>
+<tr><td>07</td><td>it→animal</td><td>0.19</td></tr>
+<tr><td>08</td><td>Tiny GPT</td><td>210k 3.55→2.34; 818k 3.27→1.83</td></tr>
+<tr><td>09</td><td>Scaling</td><td>slope −0.048</td></tr>
+<tr><td>10</td><td>Live market</td><td>52.6% direction</td></tr>
+</table></div>
+
+<h2 id="quiz">🧠 Interactive exam — scratch → pro (8/10 to pass)</h2>
+<div class="card"><div class="bar"><i id="prog" style="width:0%"></i></div><p id="score" class="mut">0 / 10 answered</p><div id="quizbox"></div>
+<p><button class="btn" onclick="resetQuiz()">Retry</button></p></div>
+
+<h2>🧑‍💼 Use it for</h2>
+<div class="grid g3">
+<div class="card"><b>Students</b><p class="mut">10 labs + exam = interview-ready.</p></div>
+<div class="card"><b>Candidates</b><p class="mut">Memorize 4, 26, 60M/1.5B/175B, −0.048, 52.6%.</p></div>
+<div class="card"><b>Teachers</b><p class="mut">Auto-graded JSON + quiz.</p></div>
+<div class="card"><b>Builders</b><p class="mut">Copy tiny-GPT + scaling sweep before buying GPUs.</p></div>
+<div class="card"><b>Buyers</b><p class="mut">Show market JSON to hype.</p></div>
+<div class="card"><b>Researchers</b><p class="mut">Extend twist curves, Chinchilla, walk-forward.</p></div>
+</div>
+
+<h2>🚀 Run it</h2>
+<div class="card"><pre>docker compose up --build lab
+PYTHONPATH=. python -m src.run_all --fast
+python -m http.server 8000 --directory docs  # this page</pre>
+<p class="mut">Pages: Settings → Pages → Deploy from branch → main → /docs.</p></div>
+
+<script>
+const Q=[
+{q:"1 dial = ?",a:["A GPU","An adjustable weight","A dataset"],c:1,e:"Brass dial decides how much input counts. 3w+1b=4."},
+{q:"Loss is?",a:["Mistake score (small=good)","Number of GPUs","Internet speed"],c:0,e:"Height of valley. Downhill = better."},
+{q:"lr=1.05 on x²?",a:["Settles","Wobbles then settles","Explodes"],c:2,e:"Over 2/L=1.0 diverges (1.48M)."},
+{q:"Single bead on spirals?",a:["100%","~49% (guessing)","Always 87%"],c:1,e:"Straight line cannot curl. 26 dials →100% gentle."},
+{q:"Hard spirals: 26 vs 501?",a:["Both 100%","66% vs ~87%","501 worse"],c:1,e:"Capacity threshold — size must match twist."},
+{q:"Backprop check?",a:["2.7e-09 vs brute force","Never checked","Only theory"],c:0,e:"Analytic == numeric."},
+{q:"CNN first finds?",a:["Whole cats","Edges/color changes","Stock prices"],c:1,e:"Edge energy 2.37 precedes 96.4%."},
+{q:"king−man+woman?",a:["man","queen #1 cos .73","random"],c:1,e:"Closeness learned from text, not exact."},
+{q:"it→? in animal sentence",a:["cross","animal 0.19","tired"],c:1,e:"Attention routes pronoun to noun."},
+{q:"Market direction 52.6% means?",a:["Edge!","Coin-flip, no edge","100% sure"],c:1,e:"Same math, no foresight. Loss≠intel."}];
+let ans=new Array(Q.length).fill(-1);
+function render(){const b=document.getElementById('quizbox');b.innerHTML='';
+Q.forEach((qq,i)=>{const d=document.createElement('div');d.className='q';
+d.innerHTML=`<b>${qq.q}</b><div class="mut" id="e${i}"></div>`;
+qq.a.forEach((t,j)=>{const btn=document.createElement('button');btn.textContent=t;
+if(ans[i]===j)btn.className=(j===qq.c?'ok':'bad');
+btn.onclick=()=>{ans[i]=j;render();upd()};
+d.appendChild(btn)});
+if(ans[i]>=0){const e=document.createElement('div');e.className='mut';e.textContent=(ans[i]===qq.c?'✅ ':'❌ ')+qq.e;d.appendChild(e)}
+b.appendChild(d)});upd()}
+function upd(){const n=ans.filter(x=>x>=0).length;const s=ans.filter((x,i)=>x===Q[i].c).length;
+document.getElementById('prog').style.width=(n/Q.length*100)+'%';
+document.getElementById('score').textContent=`${n} / ${Q.length} answered • score ${s} / ${Q.length}`+(n===Q.length?(s>=8?' — PRO ✅':' — retry 🌱'):'')}
+function resetQuiz(){ans=new Array(Q.length).fill(-1);render()}
+render();
+</script>
+</div></body></html>

@@ -8,7 +8,7 @@
 
 **Type a question, get an answer in seconds. Behind each word: billions of multiplications nobody hand-coded. This repo rebuilds that miracle from one adjustable number — with every claim executed, measured, and plotted.**
 
-> 🌐 **Interactive version:** open `docs/preview.html` locally or via **GitHub Pages** (Settings → Pages → Deploy from branch → `main` → `/docs`) — charts, quiz from scratch-to-pro, and live tables. See [Enable Pages](#-github-pages--live-demo) below.
+> 🌐 **Interactive version (pick any — all three resolve):** [Live site `/`](https://M0-AR.github.io/one-dial-to-gpt-universe-2026/) · [`/preview.html`](https://M0-AR.github.io/one-dial-to-gpt-universe-2026/preview.html) · [`/docs/preview.html`](https://M0-AR.github.io/one-dial-to-gpt-universe-2026/docs/preview.html) — or open `docs/preview.html` locally. Charts + quiz scratch-to-pro below.
 
 <video src="docs/assets/demo.mp4" controls width="100%" poster="docs/assets/valley.png"></video>
 *5-second demo: the steel ball rolls downhill. Tiny steps crawl, huge steps explode. All learning below is this motion, repeated millions of times.*
@@ -178,13 +178,26 @@ Snapshot `2026-10-06T10:09:41Z`: BTC 85,980, AAPL 332.89 (−0.24%), EUR 0.89254
 
 ## 🌐 GitHub Pages / live demo
 
-`docs/preview.html` is a standalone static site (no build). To publish:
+Standalone static site, no build. Mirrors included so **both** Pages source settings resolve:
 
-1. GitHub → repo **Settings → Pages** → **Deploy from a branch** → Branch `main` → folder `/docs` → Save.
-2. Wait ~1 min → open `https://M0-AR.github.io/one-dial-to-gpt-universe-2026/preview.html`.
-3. `README.md` links here; `preview.html` links back + embeds `assets/*.png|mp4` relatively so forks keep working.
+| URL | Source `/docs` (recommended) | Source `/` (root) |
+|---|---|---|
+| [`/`](https://M0-AR.github.io/one-dial-to-gpt-universe-2026/) | 200 (`docs/index.html`) | 200 (root `index.html` → redirect) |
+| [`/preview.html`](https://M0-AR.github.io/one-dial-to-gpt-universe-2026/preview.html) | 200 (`docs/preview.html`) | 200 (root mirror) |
+| [`/docs/preview.html`](https://M0-AR.github.io/one-dial-to-gpt-universe-2026/docs/preview.html) | 404 (expected) | 200 (canonical file) |
 
-Local check: `python -m http.server 8000 --directory docs` → `http://localhost:8000/preview.html`.
+To publish (recommended): GitHub → repo **Settings → Pages** → **Deploy from a branch** → Branch `main` → folder `/docs` → Save → wait 1–2 min for the “pages build and deployment” Action → probe:
+
+```bash
+BASE="https://M0-AR.github.io/one-dial-to-gpt-universe-2026"
+for p in "" "preview.html" "docs/preview.html"; do
+  printf "%s -> " "/$p"
+  curl -s -o /dev/null -w "%{http_code}\n" "$BASE/$p"
+done
+# expect with /docs: 200 / 200 / 404; with /: 200 / 200 / 200
+```
+
+Files: `docs/preview.html` (canonical) + `docs/index.html` (entry copy) + root `preview.html` (mirror, only `assets/`→`docs/assets/` differs) + root `index.html` (redirect with fallbacks) + `.nojekyll` in `/` and `/docs`. All asset paths relative. Local check: `python -m http.server 8000 --directory docs` (mirrors `/docs` source) and `python -m http.server 8001` at root (mirrors `/` source).
 
 ---
 
@@ -201,7 +214,8 @@ In `docs/preview.html`: 10 multiple-choice questions (one per experiment), insta
 ├── src/run_all.py --fast                              # orchestrator
 ├── src/make_assets.py                                 # PNG + MP4 from JSON
 ├── benchmarks/results/*.json                          # proofs
-├── docs/preview.html  docs/assets/                    # site + media
+├── docs/preview.html docs/index.html docs/assets/    # canonical site + entry + media
+├── preview.html index.html .nojekyll                 # root mirrors (both source settings resolve)
 ├── data/live_snapshot.json tinyshakespeare.txt        # public + live
 ├── docker-compose.yml Dockerfile requirements.txt Makefile
 ```
